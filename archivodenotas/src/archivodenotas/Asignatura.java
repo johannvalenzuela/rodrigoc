@@ -4,11 +4,25 @@
  * and open the template in the editor.
  */
 package archivodenotas;
+import java.util.*;
 
 /**
- *
- * @author johan
+ * 
  */
 public class Asignatura {
+    /**
+     * 
+     */
+    public String nombreAsignatura;
     
+    /**
+     * Default constructor
+     */
+    public Asignatura(String nombre) {
+        this.nombreAsignatura = nombre;
+    }
+
+
+
+
 }

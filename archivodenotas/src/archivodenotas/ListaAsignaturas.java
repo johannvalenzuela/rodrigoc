@@ -12,37 +12,47 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * 
+ *
  */
-public class ListaDocentes {
+public class ListaAsignaturas {
 
     /**
-     * 
+     *
      */
-    public ArrayList<Docente> docentes;    
-    
+    public ArrayList<Asignatura> asignaturas;
+
     /**
      * Default constructor
      */
-    public ListaDocentes() {
-        docentes = new ArrayList<>();
+    public ListaAsignaturas() {
+        asignaturas = new ArrayList<>();
     }
 
+    public void AgregarAsignatura(Asignatura nuevaAsignatura) {
+        this.asignaturas.add(nuevaAsignatura);
+    }
 
-
-
-
+    public Asignatura ObtenerAsignatura(String nombreAsignatura) {
+        int i;
+        for (i = 0; i < this.asignaturas.size(); i++) {
+            if (nombreAsignatura.equals(this.asignaturas.get(i).nombreAsignatura)) {
+                return this.asignaturas.get(i);
+            }
+        }
+        return null;
+    }
     File archivo;
+
     /**
      * @param url
      */
-    public void CargarDelArchivo(String url,ListaAsignaturas asignaturas) {
+    public void CargarDelArchivo(String url) {
         // TODO implement here
-       // TODO implement here
         try {
             archivo = new File(url);
-        } catch (Exception e) { }
-        
+        } catch (Exception e) {
+        }
+
         int i = 0;
         System.out.println("___________________________________________");
         try {
@@ -53,16 +63,10 @@ public class ListaDocentes {
                 StringTokenizer strT = new StringTokenizer(frase);
                 while (strT.hasMoreTokens()) {
                     String nombre = strT.nextToken();
-                    String area = strT.nextToken();
-                    Docente docente = new Docente(nombre,area); 
-                    System.out.print("Nombre : "+docente.nombreDocente + " Area: "+docente.areaTrabajo+" Asignaturas:");
-                    while (strT.hasMoreTokens()) {
-                        String asign = strT.nextToken();
-                        docente.agregarAsignatura(asignaturas.ObtenerAsignatura(asign));
-                        System.out.print(" "+asign);
-                    }
+                    Asignatura asignatura = new Asignatura(nombre);
+                    System.out.print("Nombre : " + asignatura.nombreAsignatura);
                     System.out.println("");
-                    this.docentes.add(docente);
+                    this.asignaturas.add(asignatura);
                 }
             }
             buf.close();
@@ -71,18 +75,14 @@ public class ListaDocentes {
         System.out.println("___________________________________________");
     }
 
-    /**
-     * @param nombreDocente
-     */
-    public Docente ObtenerDocente(String nombreDocente) {
-        // TODO implement here
+    public void ver() {
+        System.out.println("___________________________________________");
+        System.out.println("Lista Asignaturas");
         int i;
-        for(i=0;i<this.docentes.size();i++){
-            if(nombreDocente.equals(this.docentes.get(i).nombreDocente)){
-                return this.docentes.get(i);
-            }
+        for(i=0; i< this.asignaturas.size(); i++ ) {
+            System.out.print("Nombre : " + this.asignaturas.get(i).nombreAsignatura);
+            System.out.println("");
         }
-        return null;
+        System.out.println("___________________________________________");
     }
-
 }

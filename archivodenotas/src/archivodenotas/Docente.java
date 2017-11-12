@@ -12,26 +12,27 @@ import java.util.ArrayList;
  * @author Julinspi
  */
 public class Docente {
-    String NombreDocente ;
-    int promedio, sol1, sol2, sol3 ;
-    String AreaDeTrabajo;
-    ArrayList<String> Asignaturas;
-    Docente ( String Docente, String AreaDeTrabajo)
-    {
-        NombreDocente = Docente  ;
-        this.AreaDeTrabajo = AreaDeTrabajo;
-        this.Asignaturas = new ArrayList<>();
+    /**
+     * 
+     */
+    public String nombreDocente;
+
+    /**
+     * 
+     */
+    public String areaTrabajo;
+
+    /**
+     * 
+     */
+    public ArrayList<Asignatura> nominaAsignaturas;
+
+    Docente ( String Docente, String AreaDeTrabajo){
+        nombreDocente = Docente  ;
+        this.areaTrabajo = AreaDeTrabajo;
+        this.nominaAsignaturas = new ArrayList<>();
     }
-    public void agregarAsignatura(String asignatura){
-        this.Asignaturas.add(asignatura);
-    }
-    public void ver()
-    {
-        System.out.print("Nombre : "+NombreDocente + "  Area de trabajo:"+ this.AreaDeTrabajo+" Asignaturas: " );
-        int i;
-        for(i = 0; i < this.Asignaturas.size() ; i++){
-            System.out.print(" "+this.Asignaturas.get(i));
-        }
-        System.out.println(".");
+    public void agregarAsignatura(Asignatura asignatura){
+        this.nominaAsignaturas.add(asignatura);
     }
 }

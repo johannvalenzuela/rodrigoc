@@ -47,8 +47,7 @@ class Lector
                         String area = strT.nextToken();
                         int j;
                         D[i] = new Docente(nombre,area);
-	        	
-                        D[i].ver();	 
+	        	 
 	          }
 	        }
 	          buf.close();

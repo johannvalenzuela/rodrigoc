@@ -8,20 +8,11 @@ import java.util.*;
 public class Curso {
 
     /**
-     * Default constructor
-     */
-    public Curso() {
-    }
-
-    /**
      * 
      */
-    public String horarioInicio;
-
-    /**
-     * 
-     */
-    public String horarioFin;
+    public String horario;
+    public int semestre;
+    public int anno;
 
     /**
      * 
@@ -31,7 +22,7 @@ public class Curso {
     /**
      * 
      */
-    public Set<Alumno> alumnos;
+    public ArrayList<Alumno> alumnos;
 
     /**
      * 
@@ -45,7 +36,18 @@ public class Curso {
 
 
 
-
+    /**
+     * Default constructor
+     */
+    public Curso(Asignatura asignatura, int anno, int semestre,Docente docente,String hora, String sala) {
+        this.anno = anno;
+        this.semestre = semestre;
+        this.sala = sala;
+        this.docente = docente;
+        this.horario = hora;
+        this.asignatura = asignatura;
+        this.alumnos = new ArrayList<>();
+    }
 
 
     /**
@@ -67,6 +69,7 @@ public class Curso {
      */
     public void InscribirAlumno(Alumno nuevoAlumno) {
         // TODO implement here
+        this.alumnos.add(nuevoAlumno);
     }
 
 }
