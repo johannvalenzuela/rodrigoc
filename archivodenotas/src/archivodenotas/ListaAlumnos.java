@@ -36,7 +36,6 @@ public class ListaAlumnos {
         } catch (Exception e) { }
         
         int i = 0;
-        System.out.println("___________________________________________");
         try {
             FileReader fr = new FileReader(archivo);
             BufferedReader buf = new BufferedReader(fr);
@@ -45,14 +44,11 @@ public class ListaAlumnos {
                 StringTokenizer strT = new StringTokenizer(frase);
                 while (strT.hasMoreTokens()) {
                     String nombre = strT.nextToken();
-                    Nota S1 = new Nota(Integer.parseInt(strT.nextToken()));
-                    Nota S2 = new Nota(Integer.parseInt(strT.nextToken()));
-                    Nota S3 = new Nota(Integer.parseInt(strT.nextToken()));
-                    Alumno alumno = new Alumno(nombre); 
-                    alumno.AgregarNota(S1);
-                    alumno.AgregarNota(S2);
-                    alumno.AgregarNota(S3);
-                    System.out.println("Nombre : "+alumno.nombreAlumno + " Notas: "+alumno.VerNotas()+" Promedio: "+ alumno.VerPromedio() );
+                    Alumno alumno = new Alumno(nombre);
+                    while (strT.hasMoreTokens()) {
+                        Nota S1 = new Nota(Integer.parseInt(strT.nextToken()));
+                        alumno.AgregarNota(S1);
+                    }
                     this.alumnos.add(alumno);
                     
                 }
@@ -60,7 +56,6 @@ public class ListaAlumnos {
             buf.close();
         } catch (IOException e) {
         }
-        System.out.println("___________________________________________");
     }
 
     /**
@@ -76,5 +71,14 @@ public class ListaAlumnos {
         }
         return null;
     }
-
+    public void ver(){
+        System.out.println("___________________________________________");
+        System.out.println("Lista de Alumnos");
+        int i;
+        for(i=0; i< this.alumnos.size(); i++){
+            System.out.println("Nombre: " +this.alumnos.get(i).nombreAlumno);
+            
+        }
+        System.out.println("___________________________________________");
+    }
 }

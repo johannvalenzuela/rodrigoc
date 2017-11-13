@@ -3,11 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/johan/Desktop/rodrigoc/archivodenotas/src/archivodenotas/Cursos</file>
+            <file>file:/C:/Users/johan/Desktop/rodrigoc/archivodenotas/src/archivodenotas/ListaAlumnos.java</file>
+            <file>file:/C:/Users/johan/Desktop/rodrigoc/archivodenotas/src/archivodenotas/Alumnos.txt</file>
+            <file>file:/C:/Users/johan/Desktop/rodrigoc/archivodenotas/src/archivodenotas/ListaCursos.java</file>
+            <file>file:/C:/Users/johan/Desktop/rodrigoc/archivodenotas/src/archivodenotas/Notas.txt</file>
+            <file>file:/C:/Users/johan/Desktop/rodrigoc/archivodenotas/src/archivodenotas/ListaDocentes.java</file>
+            <file>file:/C:/Users/johan/Desktop/rodrigoc/archivodenotas/src/archivodenotas/Curso.java</file>
             <file>file:/C:/Users/johan/Desktop/rodrigoc/archivodenotas/src/archivodenotas/Archivodenotas.java</file>
-            <file>file:/C:/Users/johan/Desktop/rodrigoc/archivodenotas/src/archivodenotas/Nota.java</file>
-            <file>file:/C:/Users/johan/Desktop/rodrigoc/archivodenotas/src/archivodenotas/Asignatura.java</file>
-            <file>file:/C:/Users/johan/Desktop/rodrigoc/archivodenotas/src/archivodenotas/Docente.java</file>
+            <file>file:/C:/Users/johan/Desktop/rodrigoc/archivodenotas/src/archivodenotas/ListaAsignaturas.java</file>
+            <file>file:/C:/Users/johan/Desktop/rodrigoc/archivodenotas/src/archivodenotas/Alumno.java</file>
+            <file>file:/C:/Users/johan/Desktop/rodrigoc/archivodenotas/src/archivodenotas/Cursos.txt</file>
         </group>
     </open-files>
 </project-private>

@@ -61,7 +61,17 @@ public class Curso {
      * 
      */
     public void VerAlumnos() {
-        // TODO implement here
+        System.out.println("___________________________________________");
+        System.out.println("Lista de Alumnos");
+        int i,j;
+        for(i=0; i< this.alumnos.size(); i++){
+            System.out.print("Nombre: " +this.alumnos.get(i).nombreAlumno+" Notas:");
+            for(j=0;j<this.alumnos.get(i).notas.size();j++){
+                System.out.print(" "+this.alumnos.get(i).notas.get(j).Valor);
+            }
+            System.out.print(" Promedio: "+this.alumnos.get(i).VerPromedio());
+        }
+        System.out.println("___________________________________________");
     }
 
     /**

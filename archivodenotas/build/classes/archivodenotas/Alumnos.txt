@@ -1,6 +1,6 @@
-Mendoza  30  20  40
-Gutierrez  35  45   48
-Lopez  16  55   50
-Fernandez  23  60 58
-Mateito  70  68  68 
-Labarca  45  56  47
+Mendoza
+Gutierrez
+Lopez
+Fernandez
+Mateito
+Labarca

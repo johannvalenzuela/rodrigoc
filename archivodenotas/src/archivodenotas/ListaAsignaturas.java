@@ -52,9 +52,6 @@ public class ListaAsignaturas {
             archivo = new File(url);
         } catch (Exception e) {
         }
-
-        int i = 0;
-        System.out.println("___________________________________________");
         try {
             FileReader fr = new FileReader(archivo);
             BufferedReader buf = new BufferedReader(fr);
@@ -64,15 +61,12 @@ public class ListaAsignaturas {
                 while (strT.hasMoreTokens()) {
                     String nombre = strT.nextToken();
                     Asignatura asignatura = new Asignatura(nombre);
-                    System.out.print("Nombre : " + asignatura.nombreAsignatura);
-                    System.out.println("");
                     this.asignaturas.add(asignatura);
                 }
             }
             buf.close();
         } catch (IOException e) {
         }
-        System.out.println("___________________________________________");
     }
 
     public void ver() {
@@ -80,8 +74,7 @@ public class ListaAsignaturas {
         System.out.println("Lista Asignaturas");
         int i;
         for(i=0; i< this.asignaturas.size(); i++ ) {
-            System.out.print("Nombre : " + this.asignaturas.get(i).nombreAsignatura);
-            System.out.println("");
+            System.out.println("Nombre : " + this.asignaturas.get(i).nombreAsignatura);
         }
         System.out.println("___________________________________________");
     }

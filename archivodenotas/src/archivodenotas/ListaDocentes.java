@@ -35,6 +35,7 @@ public class ListaDocentes {
     File archivo;
     /**
      * @param url
+     * @param asignaturas
      */
     public void CargarDelArchivo(String url,ListaAsignaturas asignaturas) {
         // TODO implement here
@@ -44,7 +45,6 @@ public class ListaDocentes {
         } catch (Exception e) { }
         
         int i = 0;
-        System.out.println("___________________________________________");
         try {
             FileReader fr = new FileReader(archivo);
             BufferedReader buf = new BufferedReader(fr);
@@ -55,20 +55,16 @@ public class ListaDocentes {
                     String nombre = strT.nextToken();
                     String area = strT.nextToken();
                     Docente docente = new Docente(nombre,area); 
-                    System.out.print("Nombre : "+docente.nombreDocente + " Area: "+docente.areaTrabajo+" Asignaturas:");
                     while (strT.hasMoreTokens()) {
                         String asign = strT.nextToken();
                         docente.agregarAsignatura(asignaturas.ObtenerAsignatura(asign));
-                        System.out.print(" "+asign);
                     }
-                    System.out.println("");
                     this.docentes.add(docente);
                 }
             }
             buf.close();
         } catch (IOException e) {
         }
-        System.out.println("___________________________________________");
     }
 
     /**
@@ -85,4 +81,14 @@ public class ListaDocentes {
         return null;
     }
 
+    public void ver() {
+        System.out.println("___________________________________________");
+        System.out.println("Lista Docentes");
+        int i;
+        for(i=0; i< this.docentes.size(); i++ ) {
+            System.out.print("Nombre: " + this.docentes.get(i).nombreDocente);
+            System.out.println("Area: " + this.docentes.get(i).areaTrabajo);
+        }
+        System.out.println("___________________________________________");
+    }
 }

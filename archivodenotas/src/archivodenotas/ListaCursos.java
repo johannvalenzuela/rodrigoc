@@ -22,16 +22,27 @@ public class ListaCursos {
         cursos = new ArrayList<>();
     }
     public void ver(){
-        
+        System.out.println("___________________________________________");
+        System.out.println("Lista de Cursos");
+        int i;
+        for(i=0; i< this.cursos.size(); i++){
+            System.out.print((i+1)+") Asignatura: " +this.cursos.get(i).asignatura.nombreAsignatura);
+            System.out.print("\t Año: " +this.cursos.get(i).anno);
+            System.out.print("\t Semestre: " +this.cursos.get(i).semestre);
+            System.out.print("\t Horario: " +this.cursos.get(i).horario);
+            System.out.print("\t Sala: " +this.cursos.get(i).sala);
+            System.out.println("\t Profesor: " +this.cursos.get(i).docente.nombreDocente);
+            
+        }
+        System.out.println("___________________________________________");
     }
     File archivo;
-    public void cargarDelArchivo(String url, ListaAsignaturas asignaturas, ListaDocentes docentes){
+    public void CargarDelArchivo(String url, ListaAsignaturas asignaturas, ListaDocentes docentes){
         try {
             archivo = new File(url);
         } catch (Exception e) { }
         
         int i = 0;
-        System.out.println("___________________________________________");
         try {
             FileReader fr = new FileReader(archivo);
             BufferedReader buf = new BufferedReader(fr);
@@ -47,7 +58,6 @@ public class ListaCursos {
                     String horario = strT.nextToken();
                     String sala = strT.nextToken();
                     Curso cursoNuevo = new Curso(asignatura,semestre,anno,profesor, horario,sala);
-                    //System.out.println("Nombre : "+curso.nombreAlumno + " Notas: "+alumno.VerNotas()+" Promedio: "+ alumno.VerPromedio() );
                     this.cursos.add(cursoNuevo);
                     
                 }
@@ -55,6 +65,5 @@ public class ListaCursos {
             buf.close();
         } catch (IOException e) {
         }
-        System.out.println("___________________________________________");
     }
 }
